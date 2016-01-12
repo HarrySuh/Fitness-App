@@ -56,6 +56,36 @@ public class Exercise {
         }
 
         if(closeWeight == 155)
+        {
+            if(exercise.equals("Aerobics"))
+            {
+                calories += 457*hours;
+            }
+            if(exercise.equals("Basketball, shooting baskets"))
+            {
+                calories += 317*hours;
+            }
+            if(exercise.equals("Cycling, <10mph, leisure bicycling"))
+            {
+                calories += 281*hours;
+            }
+            if(exercise.equals("Running, 5 mph (12 minute mile)"))
+            {
+                calories += 563*hours;
+            }
+            if(exercise.equals("Running, 10 mph (6 min mile)"))
+            {
+                calories += 1126*hours;
+            }
+            if(exercise.equals("Swimming laps, freestyle, fast"))
+            {
+                calories += 704*hours;
+            }
+            if(exercise.equals("Walking 3.0 mph, moderate"))
+            {
+                calories += 232*hours;
+            }
+        }
 
     }
 
