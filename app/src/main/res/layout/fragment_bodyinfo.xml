@@ -18,21 +18,63 @@
         android:layout_height="wrap_content"
         android:text="Height (inches)"
         android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="43dp"/>
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Mass Index"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView2"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
         android:id="@+id/enter_weight"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/enter_height"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText3"
         android:layout_below="@+id/textView"
         android:layout_alignStart="@+id/textView"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/enter_height"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"/>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Body Information"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/button"
+        android:layout_marginTop="65dp"
+        android:layout_below="@+id/enter_weight"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="67dp"/>
 </RelativeLayout>
