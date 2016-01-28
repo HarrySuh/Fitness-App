@@ -1,18 +1,20 @@
 package com.example.csastudent2015.fitnessapp;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 /**
  * Created by csastudent2015 on 1/14/16.
  */
-public class ExerciseFragment extends Fragment {
+public class ExerciseFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     private Spinner exerciseSpinner;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,23 @@ public class ExerciseFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         exerciseSpinner.setAdapter(adapter);
+        exerciseSpinner.setOnItemSelectedListener(this);
+
         return rootView;
 
 
     }
+
+
+
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item was selected. You can retrieve the selected item using
+            // parent.getItemAtPosition(pos)
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback
+        }
+
 }
