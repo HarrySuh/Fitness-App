@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_array">
+        <item>Aerobics</item>
+        <item>Basketball, shooting baskets</item>
+        <item>Cycling, 10mph, leisure bicycling</item>
+        <item>Running, 5 mph (12 minute mile)</item>
+        <item>Running, 10 mph (6 min mile)</item>
+        <item>Swimming laps, freestyle, fast</item>
+        <item>Walking 3.0 mph, moderate</item>
+    </string-array>
+</resources>
