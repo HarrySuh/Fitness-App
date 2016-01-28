@@ -29,7 +29,8 @@ public class MainActivity extends ActionBarActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Notify("You've received new message", "");
+                Notify("New Day, New You!", "Start Exercising!");
+
             }
         });
 //----------Alarm Notification
@@ -39,8 +40,8 @@ public class MainActivity extends ActionBarActivity {
         calendar.set(Calendar.YEAR, 2016);
         calendar.set(Calendar.DAY_OF_MONTH, 28);
 
-        calendar.set(Calendar.HOUR_OF_DAY, 8);
-        calendar.set(Calendar.MINUTE, 45);
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 15);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.AM_PM,Calendar.AM);
 
