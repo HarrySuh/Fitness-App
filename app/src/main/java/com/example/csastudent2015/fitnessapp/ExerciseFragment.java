@@ -24,7 +24,7 @@ public class ExerciseFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
         exerciseSpinner = (Spinner) rootView.findViewById(R.id.exercise_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.exercise_array, android.R.layout.simple_spinner_dropdown_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
