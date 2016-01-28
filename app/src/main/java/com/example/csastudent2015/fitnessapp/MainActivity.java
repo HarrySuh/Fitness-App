@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//----------Notification Emulator
         b1=(Button)findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
                 Notify("You've received new message", "");
             }
         });
-
+//----------Alarm Notification
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.MONTH, 1);
