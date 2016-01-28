@@ -1,14 +1,9 @@
 package com.example.csastudent2015.fitnessapp;
 
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -16,26 +11,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_main_menu);
-        final Intent intentTwo = new Intent(this, ToolScreen.class);
-        final Button button = (Button) findViewById(R.id.tools_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intentTwo);
-            }
-        });
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
-
-        if (fragment == null) {
-            fragment = new fragmet();
-            fm.beginTransaction()
-                    .add(R.id.fragmentContainer, fragment)
-                    .commit();
-        }
+        setContentView(R.layout.activity_main);
     }
-    }
-
 
 
     @Override
