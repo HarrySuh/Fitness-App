@@ -18,7 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Diet"
+        android:text="Your Workout"
         android:id="@+id/dietInfo_button"
         android:layout_below="@+id/bodyInfo_button"
         android:layout_centerHorizontal="true"
@@ -51,14 +51,6 @@
         android:layout_below="@+id/button4"
         android:layout_alignStart="@+id/bodyInfo_button" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Exercise"
-        android:id="@+id/button4"
-        android:layout_below="@+id/dietInfo_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
 
 
 </RelativeLayout>
