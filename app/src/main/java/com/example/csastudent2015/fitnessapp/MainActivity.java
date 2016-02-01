@@ -1,10 +1,13 @@
 package com.example.csastudent2015.fitnessapp;
 
 import android.app.AlarmManager;
+import android.support.v4.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,15 +27,26 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//----------Notification Emulator
-        b1=(Button)findViewById(R.id.button);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Notify("New Day, New You!", "Start Exercising!");
 
-            }
-        });
+        //loading fragments
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentByTag("fragment_main_menu");
+        if (fragment == null) {
+            FragmentTransaction ft = fm.beginTransaction();
+            fragment = new MainMenuFragment();
+            ft.add(android.R.id.content,fragment,"fragment_main_menu");
+            ft.commit();
+        }
+
+//----------Notification Emulator
+//        b1=(Button)findViewById(R.id.button);
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Notify("New Day, New You!", "Start Exercising!");
+//
+//            }
+//        });
 //----------Alarm Notification
         Calendar calendar = Calendar.getInstance();
 
