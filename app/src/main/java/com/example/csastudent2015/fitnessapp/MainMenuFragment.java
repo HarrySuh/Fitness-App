@@ -36,13 +36,11 @@ public class MainMenuFragment extends Fragment{
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_container, new ExerciseFragment(), "ExerciseFragment");
                 ft.addToBackStack(null);
-
                 ft.commit();
-
             }
         });
 
-        return rootView;
+
 
 
 
