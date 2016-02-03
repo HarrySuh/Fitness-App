@@ -1,6 +1,7 @@
 package com.example.csastudent2015.fitnessapp;
 
 import android.app.AlarmManager;
+import android.os.SystemClock;
 import android.support.v4.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 
 import java.util.Calendar;
 
@@ -22,7 +24,6 @@ public class MainActivity extends ActionBarActivity {
 
     private PendingIntent pendingIntent;
 
-    Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,16 +39,6 @@ public class MainActivity extends ActionBarActivity {
             ft.commit();
         }
 
-//----------Notification Emulator
-//        b1=(Button)findViewById(R.id.button);
-//        b1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Notify("New Day, New You!", "Start Exercising!");
-//
-//            }
-//        });
-//----------Alarm Notification
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.MONTH, 1);
