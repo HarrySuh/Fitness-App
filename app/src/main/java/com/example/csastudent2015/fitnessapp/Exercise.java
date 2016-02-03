@@ -8,15 +8,16 @@ public class Exercise {
     private double calories;
     private double hours;
 
-    public Exercise(int weight, double minutes)
+    public Exercise(double minutes)
     {
+        int weight = (int)BodyInfo.getWeight();
         int low = Math.abs(weight - 130);
         int med = Math.abs(weight - 155);
         int high = Math.abs(weight - 180);
         int extreme = Math.abs(weight - 205);
         int lowMed = Math.min(low, med);
         int highExtreme = Math.min(high, extreme);
-        closeWeight = weight - Math.min(lowMed, highExtreme);
+        closeWeight = weight-Math.min(lowMed, highExtreme);
         hours = minutes/60;
     }
 
@@ -29,7 +30,7 @@ public class Exercise {
             if (exercise.equals("Basketball, shooting baskets")) {
                 calories += 266 * hours;
             }
-            if (exercise.equals("Cycling, <10mph, leisure bicycling")) {
+            if (exercise.equals("Cycling, 10mph, leisure bicycling")) {
                 calories += 236 * hours;
             }
             if (exercise.equals("Running, 5 mph (12 minute mile)")) {
@@ -53,7 +54,7 @@ public class Exercise {
             if (exercise.equals("Basketball, shooting baskets")) {
                 calories += 317 * hours;
             }
-            if (exercise.equals("Cycling, <10mph, leisure bicycling")) {
+            if (exercise.equals("Cycling, 10mph, leisure bicycling")) {
                 calories += 281 * hours;
             }
             if (exercise.equals("Running, 5 mph (12 minute mile)")) {
@@ -77,7 +78,7 @@ public class Exercise {
             if (exercise.equals("Basketball, shooting baskets")) {
                 calories += 368 * hours;
             }
-            if (exercise.equals("Cycling, <10mph, leisure bicycling")) {
+            if (exercise.equals("Cycling, 10mph, leisure bicycling")) {
                 calories += 327 * hours;
             }
             if (exercise.equals("Running, 5 mph (12 minute mile)")) {
@@ -101,7 +102,7 @@ public class Exercise {
             if (exercise.equals("Basketball, shooting baskets")) {
                 calories += 419 * hours;
             }
-            if (exercise.equals("Cycling, <10mph, leisure bicycling")) {
+            if (exercise.equals("Cycling, 10mph, leisure bicycling")) {
                 calories += 372 * hours;
             }
             if (exercise.equals("Running, 5 mph (12 minute mile)")) {
