@@ -2,6 +2,7 @@ package com.example.csastudent2015.fitnessapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import android.widget.Button;
 public class MainMenuFragment extends Fragment{
     private Button summary;
     private Button bodyInfo;
-    private Button dietInfo; //exercise button
+    private Button exerciseButton; //exercise button
     private Button tools;
 
 
@@ -25,10 +26,27 @@ public class MainMenuFragment extends Fragment{
 
         summary = (Button) rootView.findViewById(R.id.summary_button);
         bodyInfo = (Button) rootView.findViewById(R.id.bodyInfo_button);
-        dietInfo = (Button) rootView.findViewById(R.id.dietInfo_button);
+        exerciseButton = (Button) rootView.findViewById(R.id.dietInfo_button);
         tools = (Button) rootView.findViewById(R.id.tools_button);
+
+
+        exerciseButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new ExerciseFragment(), "ExerciseFragment");
+                ft.addToBackStack(null);
+
+                ft.commit();
+
+            }
+        });
 
         return rootView;
 
+
+
     }
+
+
 }
