@@ -13,7 +13,7 @@ public class BodyInfoFragment extends Fragment{
     private EditText mEnterHeight;
     private TextView mWeight;
     private EditText mEnterWeight;
-    private TextView mBodyInformation;
+
 
     private Button mNext;
 
