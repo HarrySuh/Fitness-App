@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  * Created by csastudent2015 on 1/26/16.
  */
-public class MainMenuFragment extends Fragment {
+public class MainMenuFragment extends Fragment{
     private Button summary;
     private Button bodyInfo;
     private Button dietInfo; //exercise button
@@ -27,9 +27,6 @@ public class MainMenuFragment extends Fragment {
         bodyInfo = (Button) rootView.findViewById(R.id.bodyInfo_button);
         dietInfo = (Button) rootView.findViewById(R.id.dietInfo_button);
         tools = (Button) rootView.findViewById(R.id.tools_button);
-
-
-
 
         return rootView;
 

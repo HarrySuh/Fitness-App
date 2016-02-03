@@ -18,19 +18,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Diet Info"
+        android:text="Your Workout"
         android:id="@+id/dietInfo_button"
+        android:layout_marginTop="51dp"
         android:layout_below="@+id/bodyInfo_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp" />
+        android:layout_alignEnd="@+id/bodyInfo_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Summary"
         android:id="@+id/summary_button"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/textView3"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/tools_button"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -38,18 +38,18 @@
         android:layout_height="wrap_content"
         android:text="Your Body Info"
         android:id="@+id/bodyInfo_button"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/summary_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Workout Tools"
         android:id="@+id/tools_button"
-        android:layout_below="@+id/dietInfo_button"
-        android:layout_alignEnd="@+id/bodyInfo_button"
-        android:layout_marginTop="50dp" />
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/bodyInfo_button"
+        android:layout_marginTop="42dp" />
 
 
 

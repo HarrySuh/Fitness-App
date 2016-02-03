@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -21,12 +22,17 @@
         android:spinnerMode="dropdown" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="99dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/minutes"
-        android:layout_weight="1"
-        android:text="Number of Minutes" />
+        android:text="Minutes" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/enter_button" />
 
 </LinearLayout>
