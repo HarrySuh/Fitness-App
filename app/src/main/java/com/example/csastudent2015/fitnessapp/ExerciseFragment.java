@@ -4,6 +4,7 @@ package com.example.csastudent2015.fitnessapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,16 +38,22 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
         exerciseSpinner.setOnItemSelectedListener(this);
 
         enter = (Button) rootView.findViewById(R.id.enter_button);
+        enter.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            }
+        });
 
         return rootView;
     }
-
-
 
         public void onItemSelected(AdapterView<?> parent, View view,
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
+            Exercise.burn(parent.getItemAtPosition(pos).toString());
+            //
         }
 
         public void onNothingSelected(AdapterView<?> parent) {
