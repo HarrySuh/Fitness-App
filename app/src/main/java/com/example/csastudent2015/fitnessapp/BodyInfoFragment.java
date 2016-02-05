@@ -28,6 +28,8 @@ public class BodyInfoFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_bodyinfo, container, false);
+        mHeight = (TextView) rootView.findViewById(R.id.height);
+        mWeight = (TextView) rootView.findViewById(R.id.weight);
 
         mEnterWeight = (EditText) rootView.findViewById(R.id.enter_weight);
         mEnterHeight = (EditText) rootView.findViewById(R.id.enter_height);
