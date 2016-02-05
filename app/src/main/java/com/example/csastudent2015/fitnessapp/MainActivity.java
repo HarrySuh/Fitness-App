@@ -34,9 +34,10 @@ public class MainActivity extends ActionBarActivity {
         if (fragment == null) {
             FragmentTransaction ft = fm.beginTransaction();
             fragment = new MainMenuFragment();
-            ft.add(android.R.id.content,fragment,"fragment_main_menu");
+            ft.add(android.R.id.content, fragment, "fragment_main_menu");
             ft.commit();
         }
+    }
 
 //----------Notification Emulator
 //        b1=(Button)findViewById(R.id.button);
@@ -48,7 +49,9 @@ public class MainActivity extends ActionBarActivity {
 //            }
 //        });
 //----------Alarm Notification
+/*
         Calendar calendar = Calendar.getInstance();
+
 
         calendar.set(Calendar.MONTH, 1);
         calendar.set(Calendar.YEAR, 2016);
@@ -66,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
 
     }
-
+*/
     private void Notify(String notificationTitle, String notificationMessage){
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         @SuppressWarnings("deprecation")
