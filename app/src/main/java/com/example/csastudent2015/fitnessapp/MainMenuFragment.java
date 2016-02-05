@@ -50,9 +50,21 @@ public class MainMenuFragment extends Fragment{
                 ft.addToBackStack(null);
 
                 ft.commit();
+                ViewGroup layout = (ViewGroup) tools.getParent();
+                if(null!=layout) //for safety only  as you are doing onClick
+                    layout.removeView(summary);
+                    layout.removeView(bodyInfo);
+
+                    layout.removeView(exerciseButton);
+                    layout.removeView(tools);
 
             }
         });
+
+
+
+
+
 
         return rootView;
 
