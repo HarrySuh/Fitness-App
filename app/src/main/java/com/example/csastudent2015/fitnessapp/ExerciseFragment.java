@@ -52,7 +52,7 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
-            Exercise.burn(parent.getItemAtPosition(pos).toString());
+            //Exercise.burn(parent.getItemAtPosition(pos).toString());
             //
         }
 
