@@ -1,7 +1,6 @@
 package com.example.csastudent2015.fitnessapp;
 
 import android.app.AlarmManager;
-import android.os.SystemClock;
 import android.support.v4.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -15,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Chronometer;
 
 import java.util.Calendar;
 
@@ -24,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
 
     private PendingIntent pendingIntent;
 
+    Button b1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +34,24 @@ public class MainActivity extends ActionBarActivity {
         if (fragment == null) {
             FragmentTransaction ft = fm.beginTransaction();
             fragment = new MainMenuFragment();
-            ft.add(android.R.id.content,fragment,"fragment_main_menu");
+            ft.add(android.R.id.content, fragment, "fragment_main_menu");
             ft.commit();
         }
+    }
 
+//----------Notification Emulator
+//        b1=(Button)findViewById(R.id.button);
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Notify("New Day, New You!", "Start Exercising!");
+//
+//            }
+//        });
+//----------Alarm Notification
+/*
         Calendar calendar = Calendar.getInstance();
+
 
         calendar.set(Calendar.MONTH, 1);
         calendar.set(Calendar.YEAR, 2016);
@@ -57,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
         alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
 
     }
-
+*/
     private void Notify(String notificationTitle, String notificationMessage){
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         @SuppressWarnings("deprecation")

@@ -21,16 +21,16 @@
         android:layout_height="wrap_content"
         android:text="Your Workout"
         android:id="@+id/dietInfo_button"
-        android:layout_marginTop="51dp"
         android:layout_below="@+id/bodyInfo_button"
-        android:layout_alignEnd="@+id/bodyInfo_button" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Summary"
         android:id="@+id/summary_button"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="39dp"
         android:layout_below="@+id/tools_button"
         android:layout_centerHorizontal="true" />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Your Body Info"
         android:id="@+id/bodyInfo_button"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/summary_button"
         android:layout_centerHorizontal="true" />
 
@@ -48,10 +48,18 @@
         android:layout_height="wrap_content"
         android:text="Workout Tools"
         android:id="@+id/tools_button"
+        android:layout_marginTop="26dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/bodyInfo_button"
-        android:layout_marginTop="42dp" />
+        android:layout_centerHorizontal="true" />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:id="@+id/notification_switch"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp" />
 
 
 </RelativeLayout>
