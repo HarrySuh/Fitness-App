@@ -1,30 +1,49 @@
 package com.example.csastudent2015.fitnessapp;
 
 import android.os.SystemClock;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Chronometer;
+import android.support.v4.app.Fragment;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 
 /**
  * Created by csastudent2015 on 2/3/16.
  */
-public class Stopwatch extends MainActivity implements View.OnClickListener {
+public class Stopwatch extends Fragment implements View.OnClickListener {
 
     private Chronometer chronometer;
+    private Button mStart;
+    private Button mStop;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+    }
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.stopwatch, container, false);
 //
         //stopwatch
-        chronometer = (android.widget.Chronometer) findViewById(R.id.chronometer);
-        findViewById(R.id.start_button).setOnClickListener(this);
-        findViewById(R.id.stop_button).setOnClickListener(this);
-    }
+        chronometer = (android.widget.Chronometer) rootView.findViewById(R.id.chronometer);
+        mStart = (Button) rootView.findViewById(R.id.start_button);
+        mStart.setOnClickListener(this);
+        mStop = (Button) rootView.findViewById(R.id.stop_button);
+        mStop.setOnClickListener(this);
+
+    return rootView;
+
+}
 
     @Override
     public void onClick(View v) {
@@ -38,12 +57,7 @@ public class Stopwatch extends MainActivity implements View.OnClickListener {
                 break;
         }
     }
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
+
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {

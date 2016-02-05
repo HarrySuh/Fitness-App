@@ -42,6 +42,18 @@ public class MainMenuFragment extends Fragment{
             }
         });
 
+        tools.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new Stopwatch(), "Stopwatch");
+                ft.addToBackStack(null);
+
+                ft.commit();
+
+            }
+        });
+
         return rootView;
 
 
