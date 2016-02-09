@@ -29,10 +29,19 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
     private Button enter;
     private String exercise;
     private double minutes;
+    private String text;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putCharSequence(text, exerciseText.getText().toString());
+    }
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,8 +90,9 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
            }
         });
 
-
-
+        if(savedInstanceState != null) {
+            exerciseText.setText(savedInstanceState.getCharSequence(text));
+        }
         return rootView;
     }
 
