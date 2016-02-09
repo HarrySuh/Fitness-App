@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Chronometer"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="50sp"
         android:background="@color/white"
         android:layout_gravity="center_horizontal" />
     <LinearLayout
@@ -19,29 +19,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:weightSum="1">
         <Button
             android:text="START"
+            android:textSize="35sp"
             android:textColor="@color/black"
             android:id="@+id/start_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/lightgray"/>
+            android:layout_height="95dp"
+            android:background="@color/lightgray"
+            android:layout_weight="0.17" />
 
         <Button
             android:text="STOP"
+            android:textSize="35sp"
             android:textColor="@color/black"
             android:id="@+id/stop_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/lightgray" />
+            android:layout_height="95dp"
+            android:background="@color/lightgray"
+            android:layout_weight="0.17" />
     </LinearLayout>
     <Chronometer
         android:id="@+id/chronometer"
         android:format="%s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
+        android:textSize="45sp"
         android:background="@color/white"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
