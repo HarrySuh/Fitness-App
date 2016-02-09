@@ -5,30 +5,20 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 /**
  * Created by csastudent2015 on 1/14/16.
  */
 public class ExerciseFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     private Spinner exerciseSpinner;
-    private TextView exerciseText;
-    private EditText minutesText;
     private Button enter;
-    private String exercise;
-    private double minutes;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,35 +37,12 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
         exerciseSpinner.setAdapter(adapter);
         exerciseSpinner.setOnItemSelectedListener(this);
 
-        minutesText = (EditText)rootView.findViewById(R.id.minutes);
-        minutesText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-                minutes = Double.parseDouble(s.toString());
-            }
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // TODO Auto-generated method stub
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-        });
-
-        exerciseText = (TextView)rootView.findViewById(R.id.exerciseText);
-
         enter = (Button) rootView.findViewById(R.id.enter_button);
         enter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
-                Exercise exercise1 = new Exercise(minutes);
-                exercise1.burn(exercise);
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                String old=exerciseText.getText().toString();
-                String add = exercise + "\n" + "Minutes: " + minutes + "\n" + "Calories: " + exercise1.getCalories(); // can manipulate using substring also
-                exerciseText.setText(old + "\n" + "\n" + add);
-           }
+            }
         });
 
         return rootView;
@@ -85,7 +52,8 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
-            exercise = (parent.getItemAtPosition(pos).toString());
+            Exercise.burn(parent.getItemAtPosition(pos).toString());
+            //
         }
 
         public void onNothingSelected(AdapterView<?> parent) {
