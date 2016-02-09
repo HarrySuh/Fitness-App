@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
         if (fragment == null) {
             FragmentTransaction ft = fm.beginTransaction();
             fragment = new MainMenuFragment();
-            ft.add(android.R.id.content,fragment,"fragment_main_menu");
+            ft.add(R.id.fragment_container,fragment,"fragment_main_menu");
             ft.commit();
         }
 
