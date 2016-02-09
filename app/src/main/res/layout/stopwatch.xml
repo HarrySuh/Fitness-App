@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chronometer"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:background="@color/white"/>
     <LinearLayout
@@ -20,16 +21,19 @@
         android:background="@color/white">
         <Button
             android:text="START"
+            android:textColor="@color/black"
             android:id="@+id/start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"/>
+            android:background="@color/lightgray"/>
+
         <Button
             android:text="STOP"
+            android:textColor="@color/black"
             android:id="@+id/stop_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"/>
+            android:background="@color/lightgray" />
     </LinearLayout>
     <Chronometer
         android:id="@+id/chronometer"
