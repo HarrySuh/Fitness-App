@@ -81,6 +81,8 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
            }
         });
 
+
+
         return rootView;
     }
 

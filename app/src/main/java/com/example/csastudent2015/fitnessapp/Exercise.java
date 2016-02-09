@@ -10,7 +10,8 @@ public class Exercise {
 
     public Exercise(double minutes)
     {
-        int weight = (int)BodyInfo.getWeight();
+
+        int weight = (int)BodyInfo.get().getWeight();
         int low = Math.abs(weight - 130);
         int med = Math.abs(weight - 155);
         int high = Math.abs(weight - 180);
