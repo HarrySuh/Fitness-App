@@ -28,7 +28,7 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/minutes"
-                android:text="Minutes" />
+                android:hint="Minutes" />
 
             <Button
                 android:layout_width="wrap_content"
