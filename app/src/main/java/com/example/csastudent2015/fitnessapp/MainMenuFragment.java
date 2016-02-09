@@ -54,6 +54,17 @@ public class MainMenuFragment extends Fragment{
                 ft.commit();
             }
         });
+        bodyInfo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new BodyInfoFragment(), "BodyInfoFragment");
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
+
 
         //Alarm Section
         notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -69,7 +80,6 @@ public class MainMenuFragment extends Fragment{
                     Calendar calendar = new GregorianCalendar();
                     calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 2);
                     //calendar.set(Calendar.HOUR);
-
                     Intent myIntent = new Intent(getActivity(), MyReceiver.class);
                     pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
 
