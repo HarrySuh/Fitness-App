@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -65,8 +66,10 @@ public class MainMenuFragment extends Fragment{
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.set(new Date);
+                    Calendar calendar = new GregorianCalendar();
+                    calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 2);
+                    //calendar.set(Calendar.HOUR);
+
                 }
             }
         });

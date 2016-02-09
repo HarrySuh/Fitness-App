@@ -3,33 +3,39 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/white">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chronometer Demo"
-        android:textSize="20sp"/>
+        android:text="Chronometer"
+        android:textSize="20sp"
+        android:background="@color/white"/>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@color/white">
         <Button
             android:text="START"
             android:id="@+id/start_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
         <Button
             android:text="STOP"
             android:id="@+id/stop_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
     </LinearLayout>
     <Chronometer
         android:id="@+id/chronometer"
         android:format="%s"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:background="@color/white"/>
 </LinearLayout>
