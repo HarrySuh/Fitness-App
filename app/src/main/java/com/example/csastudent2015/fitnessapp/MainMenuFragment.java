@@ -55,6 +55,16 @@ public class MainMenuFragment extends Fragment{
             }
         });
 
+        tools.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new Stopwatch(), "stopwatch");
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
         //Alarm Section
         notification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
