@@ -70,6 +70,12 @@ public class MainMenuFragment extends Fragment{
                     calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 2);
                     //calendar.set(Calendar.HOUR);
 
+                    Intent myIntent = new Intent(getActivity(), MyReceiver.class);
+                    pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
+
+                    AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(getActivity().ALARM_SERVICE);
+                    alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+
                 }
             }
         });
@@ -85,11 +91,7 @@ public class MainMenuFragment extends Fragment{
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.AM_PM,Calendar.PM);
 
-        Intent myIntent = new Intent(getActivity(), MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
 
-        AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(getActivity().ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
         return rootView;
 
     }
