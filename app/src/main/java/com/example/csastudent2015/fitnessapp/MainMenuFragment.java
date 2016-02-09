@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -65,8 +66,15 @@ public class MainMenuFragment extends Fragment{
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.set(new Date);
+                    Calendar calendar = new GregorianCalendar();
+                    calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 2);
+                    //calendar.set(Calendar.HOUR);
+
+                    Intent myIntent = new Intent(getActivity(), MyReceiver.class);
+                    pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
+
+                    AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(getActivity().ALARM_SERVICE);
+                    alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
                 }
             }
         });
@@ -82,11 +90,7 @@ public class MainMenuFragment extends Fragment{
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.AM_PM,Calendar.PM);
 
-        Intent myIntent = new Intent(getActivity(), MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
 
-        AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(getActivity().ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
         return rootView;
 
     }
