@@ -30,6 +30,7 @@ public class ToolScreen extends Fragment implements AdapterView.OnItemSelectedLi
             public void onClick(View v) {
                 // Do something in response to button click
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
+
             }
         });
 

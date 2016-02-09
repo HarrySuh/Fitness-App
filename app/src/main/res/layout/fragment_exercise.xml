@@ -4,35 +4,55 @@
     >
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:weightSum="1">
+
+            <Spinner
+                android:layout_width="189dp"
+                android:layout_height="59dp"
+                android:id="@+id/exercise_spinner"
+                android:spinnerMode="dropdown"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/minutes"
+                android:text="Minutes" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter"
+                android:id="@+id/enter_button" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/exerciseText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.86" />
+
+        <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:text=" Clear All"
+            android:id="@+id/clearButton"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
-
-    <Spinner
-        android:layout_width="189dp"
-        android:layout_height="59dp"
-        android:id="@+id/exercise_spinner"
-        android:spinnerMode="dropdown" />
-
-    <EditText
-        android:layout_width="99dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/minutes"
-        android:text="Minutes" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/enter_button" />
 
 </LinearLayout>
