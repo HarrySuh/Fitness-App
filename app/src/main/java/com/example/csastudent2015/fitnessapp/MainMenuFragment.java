@@ -30,6 +30,7 @@ public class MainMenuFragment extends Fragment{
     private Button exerciseButton; //exercise button
     private Button tools;
     private Switch notification;
+    private Button about;
     private PendingIntent pendingIntent;
 
     @Override

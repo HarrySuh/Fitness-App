@@ -12,7 +12,8 @@
         android:text="Chronometer"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:layout_gravity="center_horizontal" />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -41,5 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
