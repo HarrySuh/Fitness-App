@@ -27,6 +27,7 @@ public class BodyPicFragment extends Fragment {
     private ImageButton mBodyCamera;
     private Button mBackToMenu;
     private File mBodyFile;
+    private BodyPic bp;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -37,13 +38,13 @@ public class BodyPicFragment extends Fragment {
 
 
     @Override
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_bodypic, container, false);
-
-    mBodyPic = (ImageView) rootView.findViewById(R.id.BodyPic);
-        mBodyCamera = (ImageButton) rootView.findViewById(R.id.BodyCamera);
+        bp = new BodyPic();
+        mBodyFile = bp.getPhotoFile(getActivity());
+        mBodyPic = (ImageView) rootView.findViewById(R.id.BodyPic);
+        mBodyCamera = (ImageButton) rootView.findViewById(R.id.ImageButton);
         mBackToMenu = (Button) rootView.findViewById(R.id.BackToMenu);
 
         final Intent captureSelfie = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

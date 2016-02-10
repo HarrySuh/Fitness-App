@@ -2,6 +2,8 @@ package com.example.csastudent2015.fitnessapp;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -30,6 +32,8 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
     private String exercise;
     private double minutes;
     private String text;
+    private SharedPreferences mSharedPreferences;
+    public static String PREFS = "FitnessApp";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,8 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mSharedPreferences = getActivity().getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+
         View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
         exerciseSpinner = (Spinner) rootView.findViewById(R.id.exercise_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -76,7 +82,8 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
         });
 
         exerciseText = (TextView)rootView.findViewById(R.id.exerciseText);
-
+String savedText = mSharedPreferences.getString("exercise","");
+        exerciseText.setText(savedText);
         enter = (Button) rootView.findViewById(R.id.enter_button);
         enter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -87,12 +94,15 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
                 String old=exerciseText.getText().toString();
                 String add = exercise + "\n" + "Minutes: " + minutes + "\n" + "Calories: " + exercise1.getCalories(); // can manipulate using substring also
                 exerciseText.setText(old + "\n" + "\n" + add);
-           }
+                text = exerciseText.getText().toString();
+
+                SharedPreferences.Editor editor = mSharedPreferences.edit();
+                editor.putString("exercise",text);
+                editor.commit();
+            }
         });
 
-        if(savedInstanceState != null) {
-            exerciseText.setText(savedInstanceState.getCharSequence(text));
-        }
+
         return rootView;
     }
 
@@ -101,6 +111,7 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
             exercise = (parent.getItemAtPosition(pos).toString());
+            //
         }
 
         public void onNothingSelected(AdapterView<?> parent) {

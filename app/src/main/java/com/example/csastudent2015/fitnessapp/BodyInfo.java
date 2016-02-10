@@ -15,13 +15,18 @@ public class BodyInfo {
     public double getWeight() {
         return weight;
     }
+    public void setWeight(double weight){
+        this.weight = weight;
+
+    }
+    public void setHeight(double height){
+        this.height = height;
+    }
 
 
     public double getBmi() {
-        weight = weight * 0.45;
-        height = height * 0.025;
-        height = Math.pow(height, 2);
-        return weight / height;
+      return (weight * 0.45)/(Math.pow(height * 0.025, 2));
+
 
     }
     public static BodyInfo get(){
