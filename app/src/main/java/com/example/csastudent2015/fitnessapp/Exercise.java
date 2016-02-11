@@ -122,9 +122,14 @@ public class Exercise {
 
     }
 
-    public double getCalories()
+    public int getCalories()
     {
-        return calories;
+        return (int)calories;
+    }
+
+    public void setCalories(double newCal)
+    {
+        calories = newCal;
     }
 
 }

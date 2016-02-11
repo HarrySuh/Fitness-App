@@ -5,9 +5,12 @@ package com.example.csastudent2015.fitnessapp;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 public class SplashScreen extends Activity{
+    private ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,10 @@ public class SplashScreen extends Activity{
             }
         };
         timerThread.start();
-    }
+
+
+        mImageView = (ImageView) findViewById(R.id.imageView);
+        mImageView.setImageResource(R.drawable.runningman);    }
 
     @Override
     protected void onPause() {

@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             android:fillViewport="true"
-            android:layout_weight="0.94">
+            android:layout_weight="0.79">
 
 
         <TextView
@@ -54,7 +54,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.86" />
         </ScrollView>
-
 
 
         <Button

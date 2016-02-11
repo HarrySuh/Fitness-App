@@ -39,7 +39,6 @@ public class MainMenuFragment extends Fragment{
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_main_menu, container, false);
 
-        summary = (Button) rootView.findViewById(R.id.summary_button);
         bodyInfo = (Button) rootView.findViewById(R.id.bodyInfo_button);
         exerciseButton = (Button) rootView.findViewById(R.id.dietInfo_button);
         tools = (Button) rootView.findViewById(R.id.tools_button);

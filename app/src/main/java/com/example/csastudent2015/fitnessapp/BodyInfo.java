@@ -25,8 +25,13 @@ public class BodyInfo {
 
 
     public double getBmi() {
-      return (weight * 0.45)/(Math.pow(height * 0.025, 2));
-
+      if(height >= 0 && weight >= 0) {
+          return (weight * 0.45) / (Math.pow(height * 0.025, 2));
+      }
+        else
+      {
+          return 0;
+      }
 
     }
     public static BodyInfo get(){
@@ -42,14 +47,14 @@ public class BodyInfo {
     public String BmiStatus(double bmi) {
 
             if (bmi < 18.5) {
-                return("You are a little underweight. Try to eat a little more and do some strength work. Aim to get a bmi of 18.5 to 24.9.");
+                return("You are underweight for your size. Try to eat more and build your muscles. Aim to get a BMI between 18.5 to 24.9.");
             } else if (bmi >= 18.5 && bmi <= 24.9) {
-                return("You are in the healthy bmi range. Maintain this bmi."); }
+                return("You have a healthy BMI. Maintain this BMI."); }
             else if(bmi >= 25 && bmi < 30.0 ){
-                return("You are a little overweight. Try to do some more cardio work and exercise more. Aim to get a bmi of 18.5 to 24.9.");
+                return("You are overweight. Try to exercise and maintain a healthy diet. Aim to get a BMI between 18.5 to 24.9.");
             }
             else{
-                return("You are in the obesity zone. Really focus on exercising more. ");
+                return("You are obese. Focus on exercise, diet, and find a doctor. Consider calling 1-800-GET-THIN");
         }
 
 

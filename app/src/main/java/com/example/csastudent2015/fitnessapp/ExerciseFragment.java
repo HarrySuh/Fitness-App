@@ -29,12 +29,14 @@ public class ExerciseFragment extends Fragment implements AdapterView.OnItemSele
     private TextView exerciseText;
     private EditText minutesText;
     private Button enter;
+    private Button clear;
     private String exercise;
     private double minutes;
     private String text;
     private SharedPreferences mSharedPreferences;
     public static String PREFS = "FitnessApp";
-
+    private int totalCalories;
+    private TextView caloriesText;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -90,12 +92,27 @@ String savedText = mSharedPreferences.getString("exercise","");
                 // Do something in response to button click
                 Exercise exercise1 = new Exercise(minutes);
                 exercise1.burn(exercise);
+                totalCalories = totalCalories + exercise1.getCalories();
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
                 String old=exerciseText.getText().toString();
                 String add = exercise + "\n" + "Minutes: " + minutes + "\n" + "Calories: " + exercise1.getCalories(); // can manipulate using substring also
                 exerciseText.setText(old + "\n" + "\n" + add);
                 text = exerciseText.getText().toString();
 
+                SharedPreferences.Editor editor = mSharedPreferences.edit();
+                editor.putString("exercise",text);
+                editor.commit();
+            }
+        });
+
+        clear = (Button) rootView.findViewById(R.id.clearButton);
+        clear.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                exerciseText.setText("");
+                text = "";
+                Exercise exercise1 = new Exercise(minutes);
+                exercise1.setCalories(0);
                 SharedPreferences.Editor editor = mSharedPreferences.edit();
                 editor.putString("exercise",text);
                 editor.commit();
